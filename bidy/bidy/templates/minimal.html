@@ -1,0 +1,31 @@
+{% load cms_tags sekizai_tags  djangocms_alias_tags menu_tags %}
+<html>
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        <ul class="nav">
+            {% show_menu 0 100 100 100 %}
+        </ul>
+        {% block content %}
+            {% placeholder "feature" %}
+            {% placeholder "content" %}
+            {% placeholder "splashbox" %}
+            {% placeholder "senbon" %}
+
+            <footer>
+                {% static_alias 'footer' %}
+              </footer>
+        {% endblock content %}
+        {% load djangocms_alias_tags %}
+
+        {% block footer %}
+            <footer>
+              {% static_alias 'footer' %}
+            </footer>
+        {% endblock footer %}
+        {% render_block "js" %}
+    </body>
+</html>
