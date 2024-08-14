@@ -36,7 +36,6 @@ lxml==5.2.2
 MarkupSafe==2.1.5
 packaging==24.1
 pillow==10.4.0
-polls @ git+http://git@github.com/divio/django-polls.git@74de1c47a960b53c8c66ab4463040c15019c241e
 prompt-toolkit==3.0.36
 PyYAML==6.0.1
 questionary==2.0.1

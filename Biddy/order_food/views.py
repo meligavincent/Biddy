@@ -10,8 +10,10 @@ from .models import Food,Category
 def book_table(request):
     if request.method == 'POST':
         form = BookTableForm(request.POST)
+        print('La table a été reservée')
         if form.is_valid():
             form.save()
+            print('La table a été reservée')
             return redirect('book_table_success')  # Create a success page or redirect back to home
     else:
         form = BookTableForm()
