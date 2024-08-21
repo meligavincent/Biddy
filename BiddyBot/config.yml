@@ -4,13 +4,13 @@ recipe: default.v1
 
 # The assistant project unique identifier
 # This default value must be replaced with a unique assistant name within your deployment
-assistant_id: placeholder_default
+assistant_id: 20240821-052847-counting-combination
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 
-pipeline:
+pipeline: null
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
@@ -48,3 +48,9 @@ policies:
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
+
+    - name: RulePolicy
+      core_fallback_action_name: "action_default_fallback"
+      core_fallback_threshold: 0.3
+      enable_fallback_prediction: True
+
