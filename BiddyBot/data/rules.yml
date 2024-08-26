@@ -1,17 +1,23 @@
 version: "3.1"
 
 rules:
-- rule: Respond to greet
+- rule: Salutation
   steps:
   - intent: greet
   - action: utter_greet
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Demander le menu
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: ask_menu
+  - action: utter_ask_menu
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Réserver une table
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: book_table
+  - action: utter_table_booked
+
+- rule: Commander un plat
+  steps:
+  - intent: order_food
+  - action: action_order_food
+  - action: utter_food_ordered

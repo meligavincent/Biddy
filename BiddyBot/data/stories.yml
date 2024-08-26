@@ -1,30 +1,35 @@
 version: "3.1"
 
 stories:
-
-- story: happy path
+- story: Réserver une table
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: book_table
+  - action: utter_table_booked
 
-- story: sad path 1
+- story: Demander le menu
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: ask_menu
+  - action: utter_ask_menu
 
-- story: sad path 2
+- story: Commander un plat
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: order_dish
+  - action: utter_order_confirmation
+
+- story: Demander l'emplacement du restaurant
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_restaurant_location
+  - action: utter_ask_restaurant_location
+
+- story: Dire au revoir
+  steps:
+  - intent: goodbye
   - action: utter_goodbye

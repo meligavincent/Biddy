@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-dish",
+      "2": "I-dish",
+      "3": "L-dish",
+      "4": "U-dish",
+      "5": "B-number_of_people",
+      "6": "I-number_of_people",
+      "7": "L-number_of_people",
+      "8": "U-number_of_people",
+      "9": "B-restaurant",
+      "10": "I-restaurant",
+      "11": "L-restaurant",
+      "12": "U-restaurant",
+      "13": "B-time",
+      "14": "I-time",
+      "15": "L-time",
+      "16": "U-time",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-dish": 1,
+      "I-dish": 2,
+      "L-dish": 3,
+      "U-dish": 4,
+      "B-number_of_people": 5,
+      "I-number_of_people": 6,
+      "L-number_of_people": 7,
+      "U-number_of_people": 8,
+      "B-restaurant": 9,
+      "I-restaurant": 10,
+      "L-restaurant": 11,
+      "U-restaurant": 12,
+      "B-time": 13,
+      "I-time": 14,
+      "L-time": 15,
+      "U-time": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

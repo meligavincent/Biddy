@@ -1,34 +1,62 @@
 version: "3.1"
-
 intents:
   - greet
+  - ask_menu
+  - book_table
+  - order_food
+  - order_dish
+  - ask_restaurant_location
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+
+entities:
+  - table_number
+  - time
+  - number_of_people
+  - dish
+
+slots:
+  table_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: table_number
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time
+  number_of_people:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number_of_people
+  dish:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: dish
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Bonjour ! Comment puis-je vous aider aujourd'hui ?"
+  
+  utter_table_booked:
+    - text: "Votre table a été réservée avec succès."
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_food_ordered:
+    - text: "Votre commande a été passée avec succès."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+actions:
+  - action_show_menu
+  - action_book_table
+  - action_order_food
 
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+forms:
+  book_table_form:
+    required_slots:
+      - table_number
+      - time
+      - number_of_people
+  order_food_form:
+    required_slots:
+      - dish
