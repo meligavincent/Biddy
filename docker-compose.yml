@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  biddy_gunicorn:
+    volumes:
+      - static:/static
+    env_file:
+      - Biddy/.env
+    build: 
+      context: ./Biddy
+    ports:
+      - "8000:8000"
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static:/static
+    ports:
+      - "80:80"
+    depends_on:
+      - biddy_gunicorn
+
+
+volumes:
+  static:
