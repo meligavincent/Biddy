@@ -11,6 +11,12 @@ services:
     ports:
       - "8000:8000"
 
+  rasa:
+    build:
+      context: ../Chatbots/BiddyBot/BiddyBot
+    ports:
+        - 5005:5005
+
   nginx:
     build: ./nginx
     volumes:
