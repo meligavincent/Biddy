@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE_DJANGO = 'dummy-django-image:latest'
         DOCKER_IMAGE_RASA = 'dummy-rasa-image:latest'
         COMPOSE_FILE = 'docker-compose.yml'
-        EC2_HOST = 'dummy-ec2-instance'
+        EC2_HOST = 'dummy-ec2-instance-pain'
     }
 
     stages {
