@@ -12,8 +12,8 @@ pipeline {
         stage('Prepare') {
             steps {
                 echo 'Installing Docker Compose...'
-                sh 'sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
-                sh 'sudo chmod +x /usr/local/bin/docker-compose'
+                sh 'curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
+                sh 'chmod +x /usr/local/bin/docker-compose'
             }
         }
 
@@ -27,8 +27,8 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 echo 'Step: Building Docker Images for Django and Rasa...'
-                sh 'sudo docker-compose -f docker-compose.yml build'
-                sh 'sudo docker-compose -f docker-compose.yml up'
+                sh 'docker-compose -f docker-compose.yml build'
+                sh 'docker-compose -f docker-compose.yml up'
 
             }
         }
