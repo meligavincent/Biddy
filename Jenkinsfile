@@ -24,7 +24,7 @@ pipeline {
             }
         }
 
-        sstage('Build Docker Images') {
+        stage('Build Docker Images') {
             steps {
                 echo 'Step: Building Docker Images for Django and Rasa...'
                 sh 'sudo docker-compose -f docker-compose.yml build'
