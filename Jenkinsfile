@@ -27,8 +27,8 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 echo 'Step: Building Docker Images for Django and Rasa...'
-                sh 'docker-compose -f docker-compose.yml build'
-                sh 'docker-compose -f docker-compose.yml up'
+                sh 'docker build -t biddy .'
+                sh 'docker-compose up -d'
 
             }
         }
