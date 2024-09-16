@@ -11,9 +11,12 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
-                echo 'Step: Preparing environment (e.g., installing Docker Compose, etc.)'
+                echo 'Installing Docker Compose...'
+                sh 'sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
+                sh 'sudo chmod +x /usr/local/bin/docker-compose'
             }
         }
+
 
         stage('Checkout') {
             steps {
@@ -21,11 +24,15 @@ pipeline {
             }
         }
 
-        stage('Build Docker Images') {
+        sstage('Build Docker Images') {
             steps {
                 echo 'Step: Building Docker Images for Django and Rasa...'
+                sh 'sudo docker-compose -f docker-compose.yml build'
+                sh 'sudo docker-compose -f docker-compose.yml up'
+
             }
         }
+
 
         stage('Run Unit Tests') {
             steps {
