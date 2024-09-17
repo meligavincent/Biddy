@@ -12,6 +12,7 @@ pipeline {
 
         stage('Checkout Biddy') {
             steps {
+                dir('Biddy')
                 echo 'Cloning the repository...'
                 git branch: 'main', credentialsId: 'fe933224-e6c6-461f-886b-3b5b46ba6305', url: 'https://github.com/meligavincent/Biddy.git'
             }
@@ -19,19 +20,11 @@ pipeline {
 
         stage('Checkout BiddyBot') {
             steps {
+                dir('BiddyBot')
                 echo 'Cloning the repository...'
                 git branch: 'main', credentialsId: '0936b05f-e2ae-4f84-806f-5b8aa88a8c5e', url: 'https://github.com/meligavincent/BiddyBot.git'
             }
         }
-
-        stage('Prepare') {
-            steps {
-                echo 'Installing Docker Compose....'
-                sh 'sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
-                sh 'sudo chmod +x /usr/local/bin/docker-compose'
-            }
-        } 
-
 
         stage('Checkout') {
             steps {
@@ -42,8 +35,6 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 echo 'Step: Building Docker Images for Django and Rasa...'
-                sh 'sudo docker-compose build'
-
                 sh 'sudo docker-compose up -d'
 
             }
