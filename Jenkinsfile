@@ -33,6 +33,7 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 echo 'Step: Building Docker Images for Django and Rasa...'
+                sh 'ls -l'
                 sh 'sudo docker-compose up -d'
 
             }
