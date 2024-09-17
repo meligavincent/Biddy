@@ -12,21 +12,15 @@ pipeline {
 
         stage('Checkout Biddy') {
             steps {
-                script {
-                    echo 'Cloning the repository...'
-                    dir('Biddy')
-                        git branch: 'main', credentialsId: 'fe933224-e6c6-461f-886b-3b5b46ba6305', url: 'https://github.com/meligavincent/Biddy.git'
-                }
+                echo 'Cloning the repository...'
+                git branch: 'main', credentialsId: 'fe933224-e6c6-461f-886b-3b5b46ba6305', url: 'https://github.com/meligavincent/Biddy.git'
             }
         }
 
         stage('Checkout BiddyBot') {
             steps {
-                script {
-                    echo 'Cloning the repository...'
-                    dir('BiddyBot')
-                        git branch: 'main', credentialsId: '0936b05f-e2ae-4f84-806f-5b8aa88a8c5e', url: 'https://github.com/meligavincent/BiddyBot.git'
-                }
+                echo 'Cloning the repository...'
+                git branch: 'main', credentialsId: '0936b05f-e2ae-4f84-806f-5b8aa88a8c5e', url: 'https://github.com/meligavincent/BiddyBot.git'
             }
         }
 
