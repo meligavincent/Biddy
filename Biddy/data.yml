@@ -1,0 +1,16 @@
+- model: app.category
+  pk: 1
+  fields:
+    name: Desserts
+    description: Sweet dishes
+    is_active: true
+
+- model: app.food
+  pk: 1
+  fields:
+    name: Chocolate Cake
+    price: 5.00
+    description: Delicious chocolate cake
+    image: images/chocolate_cake.jpg
+    is_active: true
+    category: 1
