@@ -1,14 +1,22 @@
 FROM python:3.12.5-alpine3.20
 
+# Met à jour pip
 RUN pip3 install --upgrade pip
 
-CMD [ "ECHO ${pwd}" ]
-COPY requirements.txt requirements.txt
-
+# Copie le fichier requirements.txt et installe les dépendances
+COPY requirements.txt /app/requirements.txt
+WORKDIR /app
 RUN pip3 install -r requirements.txt
-COPY  .  /app
 
+# Copie le reste de l'application
+COPY . /app/
+
+# Copie le script d'entrée et le rend exécutable
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Définir le répertoire de travail
 WORKDIR /app
 
-COPY ./entrypoint.sh /
-ENTRYPOINT [ "sh","/entrypoint.sh" ]
+# Définir le point d'entrée du conteneur
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]

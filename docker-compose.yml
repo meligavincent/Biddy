@@ -10,12 +10,16 @@ services:
       context: ./Biddy
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://user:password@db:5432/biddydb
 
   rasa:
     build:
-      context: ./BiddyBot/BiddyBot
+      context: ../Chatbots/BiddyBot/BiddyBot
     ports:
-        - 5005:5005
+      - 5005:5005
 
   nginx:
     build: ./nginx
@@ -26,6 +30,17 @@ services:
     depends_on:
       - biddy_gunicorn
 
+  db:
+    image: postgres:17rc1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
 volumes:
   static:
+  postgres_data:
