@@ -12,21 +12,19 @@ pipeline {
 
         stage('Checkout Biddy') {
             steps {
-                echo 'Cloning the repository...'
-                git branch: 'main', credentialsId: 'fe933224-e6c6-461f-886b-3b5b46ba6305', url: 'https://github.com/meligavincent/Biddy.git'
+                echo 'Cloning the Biddy repository...'
+                dir('Biddy') { // Clone Biddy into a subfolder named Biddy
+                    git branch: 'main', credentialsId: 'fe933224-e6c6-461f-886b-3b5b46ba6305', url: 'https://github.com/meligavincent/Biddy.git'
+                }
             }
         }
 
         stage('Checkout BiddyBot') {
             steps {
-                echo 'Cloning the repository...'
-                git branch: 'main', credentialsId: '0936b05f-e2ae-4f84-806f-5b8aa88a8c5e', url: 'https://github.com/meligavincent/BiddyBot.git'
-            }
-        }
-
-        stage('Checkout') {
-            steps {
-                echo 'Step: Checking out the repository...'
+                echo 'Cloning the BiddyBot repository...'
+                dir('BiddyBot') { // Clone BiddyBot into a subfolder named BiddyBot
+                    git branch: 'main', credentialsId: '0936b05f-e2ae-4f84-806f-5b8aa88a8c5e', url: 'https://github.com/meligavincent/BiddyBot.git'
+                }
             }
         }
 
@@ -35,10 +33,8 @@ pipeline {
                 echo 'Step: Building Docker Images for Django and Rasa...'
                 sh 'ls -l'
                 sh 'sudo docker-compose up -d'
-
             }
         }
-
 
         stage('Run Unit Tests') {
             steps {
