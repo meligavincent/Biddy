@@ -17,6 +17,7 @@ pipeline {
                     dir('Biddy')
                         git branch: 'main', credentialsId: 'fe933224-e6c6-461f-886b-3b5b46ba6305', url: 'https://github.com/meligavincent/Biddy.git'
                 }
+            }
         }
 
         stage('Checkout BiddyBot') {
