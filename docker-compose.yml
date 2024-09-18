@@ -17,7 +17,7 @@ services:
 
   rasa:
     build:
-      context: ../Chatbots/BiddyBot/BiddyBot
+      context: ../BiddyBot/BiddyBot
     ports:
       - 5005:5005
 
