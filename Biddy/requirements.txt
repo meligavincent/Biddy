@@ -68,7 +68,6 @@ sortedcontainers
 soupsieve
 sqlparse
 termcolor
-tinycss20
 tomlkit
 trio
 trio-websocket
