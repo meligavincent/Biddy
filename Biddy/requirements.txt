@@ -67,7 +67,6 @@ sniffio
 sortedcontainers
 soupsieve
 sqlparse
-svglib
 termcolor
 tinycss20
 tomlkit
