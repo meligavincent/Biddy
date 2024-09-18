@@ -17,6 +17,14 @@ class Command(BaseCommand):
         for entry in data:
             model = apps.get_model(entry['model'])
             fields = entry['fields']
+
+            # Handle ForeignKey fields
+            for field_name, value in fields.items():
+                if isinstance(value, dict) and 'model' in value and 'pk' in value:
+                    foreign_model = apps.get_model(value['model'])
+                    foreign_obj = foreign_model.objects.get(pk=value['pk'])
+                    fields[field_name] = foreign_obj
+
             pk = entry.get('pk')
             if pk:
                 obj, created = model.objects.update_or_create(pk=pk, defaults=fields)

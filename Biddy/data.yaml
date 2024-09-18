@@ -1,0 +1,294 @@
+# Category: Desserts
+- model: order_food.category
+  pk: 1
+  fields:
+    name: Desserts
+    description: Sweet and delightful treats.
+    is_active: true
+
+# Products for Desserts
+- model: order_food.food
+  pk: 1
+  fields:
+    name: Chocolate Lava Cake
+    price: 6.50
+    description: Rich and gooey chocolate lava cake, served warm.
+    image: images/chocolate_lava_cake.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 1}  # Correct way to reference the category
+
+- model: order_food.food
+  pk: 2
+  fields:
+    name: Vanilla Ice Cream
+    price: 3.00
+    description: Creamy vanilla ice cream made from real vanilla beans.
+    image: images/vanilla_ice_cream.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 1}
+
+- model: order_food.food
+  pk: 3
+  fields:
+    name: Apple Pie
+    price: 4.00
+    description: Classic apple pie with a flaky crust and cinnamon-spiced apples.
+    image: images/apple_pie.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 1}
+
+- model: order_food.food
+  pk: 4
+  fields:
+    name: Tiramisu
+    price: 5.50
+    description: Italian coffee-flavored dessert with layers of mascarpone and cocoa.
+    image: images/tiramisu.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 1}
+
+- model: order_food.food
+  pk: 5
+  fields:
+    name: Brownie Sundae
+    price: 6.00
+    description: Fudgy brownie topped with vanilla ice cream and chocolate sauce.
+    image: images/brownie_sundae.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 1}
+
+# Category: Beverages
+- model: order_food.category
+  pk: 2
+  fields:
+    name: Beverages
+    description: Refreshing drinks to complement your meal.
+    is_active: true
+
+# Products for Beverages
+- model: order_food.food
+  pk: 6
+  fields:
+    name: Fresh Lemonade
+    price: 2.50
+    description: Freshly squeezed lemonade with a hint of mint.
+    image: images/fresh_lemonade.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 2}
+
+- model: order_food.food
+  pk: 7
+  fields:
+    name: Iced Coffee
+    price: 3.00
+    description: Chilled coffee with milk and a touch of sweetness.
+    image: images/iced_coffee.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 2}
+
+- model: order_food.food
+  pk: 8
+  fields:
+    name: Mango Smoothie
+    price: 4.00
+    description: Creamy mango smoothie made with fresh mangoes.
+    image: images/mango_smoothie.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 2}
+
+- model: order_food.food
+  pk: 9
+  fields:
+    name: Herbal Tea
+    price: 2.00
+    description: A soothing blend of herbal tea with chamomile and peppermint.
+    image: images/herbal_tea.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 2}
+
+- model: order_food.food
+  pk: 10
+  fields:
+    name: Sparkling Water
+    price: 1.50
+    description: Refreshing sparkling water with a hint of lime.
+    image: images/sparkling_water.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 2}
+
+# Category: Appetizers
+- model: order_food.category
+  pk: 3
+  fields:
+    name: Appetizers
+    description: Light and tasty starters to kick off your meal.
+    is_active: true
+
+# Products for Appetizers
+- model: order_food.food
+  pk: 11
+  fields:
+    name: Garlic Breadsticks
+    price: 3.00
+    description: Warm garlic breadsticks with a crispy crust and soft center.
+    image: images/garlic_breadsticks.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 3}
+
+- model: order_food.food
+  pk: 12
+  fields:
+    name: Mozzarella Sticks
+    price: 4.50
+    description: Crispy fried mozzarella sticks served with marinara sauce.
+    image: images/mozzarella_sticks.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 3}
+
+- model: order_food.food
+  pk: 13
+  fields:
+    name: Stuffed Mushrooms
+    price: 5.00
+    description: Button mushrooms stuffed with a garlic and herb cheese filling.
+    image: images/stuffed_mushrooms.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 3}
+
+- model: order_food.food
+  pk: 14
+  fields:
+    name: Chicken Wings
+    price: 6.00
+    description: Spicy buffalo chicken wings served with ranch dipping sauce.
+    image: images/chicken_wings.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 3}
+
+- model: order_food.food
+  pk: 15
+  fields:
+    name: Shrimp Cocktail
+    price: 7.00
+    description: Chilled shrimp served with cocktail sauce and lemon.
+    image: images/shrimp_cocktail.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 3}
+
+# Category: Main Course
+- model: order_food.category
+  pk: 4
+  fields:
+    name: Main Course
+    description: Hearty and flavorful main dishes.
+    is_active: true
+
+# Products for Main Course
+- model: order_food.food
+  pk: 16
+  fields:
+    name: Grilled Salmon
+    price: 12.00
+    description: Tender grilled salmon with a lemon butter sauce.
+    image: images/grilled_salmon.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 4}
+
+- model: order_food.food
+  pk: 17
+  fields:
+    name: Spaghetti Carbonara
+    price: 10.00
+    description: Creamy pasta with pancetta and Parmesan cheese.
+    image: images/spaghetti_carbonara.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 4}
+
+- model: order_food.food
+  pk: 18
+  fields:
+    name: Chicken Alfredo
+    price: 11.00
+    description: Grilled chicken served over fettuccine with Alfredo sauce.
+    image: images/chicken_alfredo.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 4}
+
+- model: order_food.food
+  pk: 19
+  fields:
+    name: Beef Steak
+    price: 15.00
+    description: Juicy beef steak served with mashed potatoes and green beans.
+    image: images/beef_steak.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 4}
+
+- model: order_food.food
+  pk: 20
+  fields:
+    name: Vegetable Stir Fry
+    price: 8.00
+    description: Stir-fried vegetables with soy sauce and sesame seeds.
+    image: images/vegetable_stir_fry.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 4}
+
+# Category: Salads
+- model: order_food.category
+  pk: 5
+  fields:
+    name: Salads
+    description: Fresh and healthy salad options.
+    is_active: true
+
+# Products for Salads
+- model: order_food.food
+  pk: 21
+  fields:
+    name: Caesar Salad
+    price: 5.50
+    description: Classic Caesar salad with fresh romaine lettuce, croutons, and Parmesan.
+    image: images/caesar_salad.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 5}
+
+- model: order_food.food
+  pk: 22
+  fields:
+    name: Greek Salad
+    price: 6.00
+    description: A refreshing mix of cucumbers, tomatoes, olives, and feta cheese.
+    image: images/greek_salad.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 5}
+
+- model: order_food.food
+  pk: 23
+  fields:
+    name: Caprese Salad
+    price: 5.00
+    description: Sliced tomatoes, fresh mozzarella, and basil drizzled with balsamic glaze.
+    image: images/caprese_salad.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 5}
+
+- model: order_food.food
+  pk: 24
+  fields:
+    name: Cobb Salad
+    price: 7.50
+    description: A hearty salad with chicken, bacon, egg, and blue cheese.
+    image: images/cobb_salad.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 5}
+
+- model: order_food.food
+  pk: 25
+  fields:
+    name: Spinach Salad
+    price: 6.50
+    description: Fresh spinach with strawberries, pecans, and a balsamic vinaigrette.
+    image: images/spinach_salad.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 5}
