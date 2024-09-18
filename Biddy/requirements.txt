@@ -47,7 +47,6 @@ numpy
 outcome
 packaging
 pillow
-pinscrape
 pluggy
 prompt-toolkit
 psycopg2-binary
