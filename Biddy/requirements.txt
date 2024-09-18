@@ -44,7 +44,6 @@ Jinja2
 lxml
 MarkupSafe
 numpy
-opencv-python
 outcome
 packaging
 pillow
