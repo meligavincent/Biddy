@@ -2,29 +2,31 @@ version: "3.8"
 
 services:
   biddy_gunicorn:
-    volumes:
-      - static:/static
-    env_file:
-      - Biddy/.env
     build: 
       context: ./Biddy
+    volumes:
+      - static:/static
+      - media:/media  # Ajout d'un volume pour les fichiers media
+    env_file:
+      - Biddy/.env
     ports:
       - "8000:8000"
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://user:password@db:5432/biddydb
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}  # Utilisation des variables d'environnement
 
   rasa:
     build:
       context: ./BiddyBot/BiddyBot
     ports:
-      - 5005:5005
+      - "5005:5005"
 
   nginx:
     build: ./nginx
     volumes:
       - static:/static
+      - media:/media  # Ajout d'un volume pour les fichiers media
     ports:
       - "80:80"
     depends_on:
@@ -43,4 +45,5 @@ services:
 
 volumes:
   static:
+  media:  # Volume pour stocker les fichiers media
   postgres_data:
