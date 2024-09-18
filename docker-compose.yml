@@ -6,7 +6,7 @@ services:
       context: ./Biddy
     volumes:
       - static:/static
-      - media:/media  # Ajout d'un volume pour les fichiers media
+      - images:/images  # Ajout d'un volume pour les fichiers media
     env_file:
       - Biddy/.env
     ports:
@@ -26,7 +26,7 @@ services:
     build: ./nginx
     volumes:
       - static:/static
-      - media:/media  # Ajout d'un volume pour les fichiers media
+      - images:/images  # Ajout d'un volume pour les fichiers media
     ports:
       - "80:80"
     depends_on:
@@ -45,5 +45,5 @@ services:
 
 volumes:
   static:
-  media:  # Volume pour stocker les fichiers media
+  images:  # Volume pour stocker les fichiers media
   postgres_data:
