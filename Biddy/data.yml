@@ -1,11 +1,11 @@
-- model: app.category
+- model: order_food.category
   pk: 1
   fields:
     name: Desserts
     description: Sweet dishes
     is_active: true
 
-- model: app.food
+- model: order_food.food
   pk: 1
   fields:
     name: Chocolate Cake
