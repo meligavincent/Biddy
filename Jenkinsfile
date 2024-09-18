@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Cloning the Biddy repository...'
                 dir('Biddy') { // Clone Biddy into a subfolder named Biddy
-                    git branch: 'main', credentialsId: 'fe933224-e6c6-461f-886b-3b5b46ba6305', url: 'https://github.com/meligavincent/Biddy.git'
+                    git branch: 'main', credentialsId: 'biddy', url: 'https://github.com/meligavincent/Biddy.git'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Cloning the BiddyBot repository...'
                 dir('BiddyBot') { // Clone BiddyBot into a subfolder named BiddyBot
-                    git branch: 'main', credentialsId: '0936b05f-e2ae-4f84-806f-5b8aa88a8c5e', url: 'https://github.com/meligavincent/BiddyBot.git'
+                    git branch: 'main', credentialsId: 'BiddyBot', url: 'https://github.com/meligavincent/BiddyBot.git'
                 }
             }
         }
