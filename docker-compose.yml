@@ -5,8 +5,8 @@ services:
     build: 
       context: ./Biddy
     volumes:
-      - static:/static
-      - images:/images  # Ajout d'un volume pour les fichiers media
+      - static:/app/static  # Utilisation de /app/static pour les fichiers statiques
+      - images:/app/images  # Utilisation de /app/images pour les fichiers media
     env_file:
       - Biddy/.env
     ports:
@@ -25,8 +25,8 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static:/static
-      - images:/images  # Ajout d'un volume pour les fichiers media
+      - static:/app/static  # Utilisation de /app/static pour les fichiers statiques
+      - images:/app/images  # Utilisation de /app/images pour les fichiers media
     ports:
       - "80:80"
     depends_on:
