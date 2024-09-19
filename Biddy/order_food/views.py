@@ -31,3 +31,15 @@ class MenuView(View):
         }
         return render(request, self.template_name, context)
     
+
+class HomeView(View):
+    template_name = "order_food/index.html"
+
+    def get(self, request, *args, **kwargs):
+        foods = Food.objects.all()
+        categories = Category.objects.all()
+        context = {
+            'foods': foods,
+            'categories': categories,
+        }
+        return render(request, self.template_name, context)

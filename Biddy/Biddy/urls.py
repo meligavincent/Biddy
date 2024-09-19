@@ -22,7 +22,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("order_food/",include("order_food.urls")),
-    path('', TemplateView.as_view(template_name='order_food/index.html'), name='home'),
+    path("",include("order_food.urls")),
+    #path('', TemplateView.as_view(template_name='order_food/index.html'), name='home'),
     path('about/', TemplateView.as_view(template_name='order_food/about.html'), name='about'), 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
