@@ -21,6 +21,18 @@ services:
       context: ./BiddyBot/BiddyBot
     ports:
       - "5005:5005"
+    depends_on:
+      - action_server
+
+  action_server:
+    build:
+      context: ./BiddyBot/actions  # Assurez-vous que ce chemin contient le Dockerfile pour le serveur d'actions
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./BiddyBot/actions:/app/actions  # Assurez-vous que ce chemin contient vos fichiers d'actions personnalisées
+    environment:
+      - PYTHONUNBUFFERED=1  # Bonne pratique pour les logs en temps réel
 
   nginx:
     build: ./nginx
