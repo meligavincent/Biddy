@@ -26,7 +26,7 @@ services:
 
   action_server:
     build:
-      context: ./BiddyBot/actions  # Assurez-vous que ce chemin contient le Dockerfile pour le serveur d'actions
+      context: ./BiddyBot/actions  # Assurez-vou que ce chemin contient le Dockerfile pour le serveur d'actions
     ports:
       - "5055:5055"
     volumes:
