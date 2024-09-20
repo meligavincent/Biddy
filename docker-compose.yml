@@ -29,11 +29,11 @@ services:
 
   action_server:
     build:
-      context: ../Chatbots/BiddyBot/
+      context: ./BiddyBot/
     ports:
       - "5055:5055"
     volumes:
-      - ../Chatbots/BiddyBot/BiddyBot/actions:/app/actions
+      - ./BiddyBot/BiddyBot/actions:/app/actions
     environment:
       - PYTHONUNBUFFERED=1  # Assurez-vous que les logs sont affichés en temps réel
 
