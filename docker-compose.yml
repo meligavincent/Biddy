@@ -5,8 +5,8 @@ services:
     build: 
       context: ./Biddy
     volumes:
-      - static:/app/static  # Utilisation de /app/static pour les fichiers statiques
-      - images:/app/images  # Utilisation de /app/images pour les fichiers media
+      - static:/app/static
+      - images:/app/images
     env_file:
       - Biddy/.env
     ports:
@@ -14,31 +14,35 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}  # Utilisation des variables d'environnement
-
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
   rasa:
     build:
-      context: ./BiddyBot/BiddyBot
+      context: ../Chatbots/BiddyBot/BiddyBot
     ports:
       - "5005:5005"
+    volumes:
+      - ../Chatbots/BiddyBot/BiddyBot:/app
     depends_on:
       - action_server
+    environment:
+      - PYTHONUNBUFFERED=1
 
   action_server:
     build:
-      context: ./BiddyBot/actions  # Assurez-vouus que ce cheemin contient le Dockerfile pour le serveur d'actions
+      context: ../Chatbots/BiddyBot/
     ports:
       - "5055:5055"
     volumes:
-      - ./BiddyBot/actions:/app/actions  # Assurez-vous que ce chemin contient vos fichiers d'actions personnalisées
+      - ../Chatbots/BiddyBot/BiddyBot/actions:/app/actions
     environment:
-      - PYTHONUNBUFFERED=1  # Bonne pratique pour les logs en temps réel
+      - PYTHONUNBUFFERED=1  # Assurez-vous que les logs sont affichés en temps réel
+
 
   nginx:
     build: ./nginx
     volumes:
-      - static:/app/static  # Utilisation de /app/static pour les fichiers statiques
-      - images:/app/images  # Utilisation de /app/images pour les fichiers media
+      - static:/app/static
+      - images:/app/images
     ports:
       - "80:80"
     depends_on:
@@ -57,5 +61,5 @@ services:
 
 volumes:
   static:
-  images:  # Volume pour stocker les fichiers media
+  images:
   postgres_data:
