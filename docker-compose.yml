@@ -17,11 +17,11 @@ services:
       - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
   rasa:
     build:
-      context: ../Chatbots/BiddyBot/BiddyBot
+      context: ./BiddyBot/BiddyBot
     ports:
       - "5005:5005"
     volumes:
-      - ../Chatbots/BiddyBot/BiddyBot:/app
+      - ./BiddyBot/BiddyBot:/app
     depends_on:
       - action_server
     environment:

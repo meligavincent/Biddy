@@ -4,7 +4,7 @@ FROM python:3.12.5-alpine3.20
 RUN pip3 install --upgrade pip
 
 # Copie le fichier requirements.txt et installe les dépendances
-COPY ./requirements.txt /app/requirements.txt
+COPY Biddy/requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip3 install -r requirements.txt
 
