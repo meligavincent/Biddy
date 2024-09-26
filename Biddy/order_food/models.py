@@ -1,6 +1,6 @@
 from django.db import models
-
-# Create your models here.
+from django.db import models
+from django.conf import settings
 class Category(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
@@ -33,3 +33,23 @@ class BookTable(models.Model):
     def __str__(self):
         return f"{self.name} - {self.date} {self.time}"
 
+
+
+
+class Cart(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='carts')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Cart {self.id} for {self.user}"
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items')
+    food = models.ForeignKey(Food, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.quantity} of {self.food.name}"
+
+    def get_total_price(self):
+        return self.food.price * self.quantity

@@ -1,5 +1,5 @@
 #!/bin/sh
-
+python manage.py makemigrations
 # Appliquer les migrations de la base de données
 python manage.py migrate --no-input
 

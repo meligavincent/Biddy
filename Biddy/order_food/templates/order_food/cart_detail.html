@@ -1,42 +1,39 @@
-{% extends 'order_food/base.html' %}
+{% extends 'order_food/head.html' %}
 
-{% block title %}
-Menu - Biddy
-{% endblock title %}
-
+<h2>Your Cart</h2>
 {% block content %}
-  <!-- food section -->
+  <!-- cart section -->
   <section class="food_section layout_padding">
     <div class="container">
         <div class="heading_container heading_center">
-            <h2>Our Menu</h2>
+            <h2>Your Cart</h2>
         </div>
 
         <!-- Filters Menu -->
         <ul class="filters_menu">
             <li class="active" data-filter="*">All</li>
-            {% for category in categories %}
-            <li data-filter=".{{ category.name|slugify }}">{{ category.name }}</li>
+            {% for item in cart.items.all %}
+            <li data-filter=".{{ item.food.category.name|slugify }}">{{ item.food.category.name }}</li>
             {% endfor %}
         </ul>
 
         <!-- Filters Content -->
         <div class="filters-content">
             <div class="row grid">
-                {% for food in foods %}
-                <div class="col-sm-6 col-lg-4 all {{ food.category.name|slugify }}">
+                {% for item in cart.items.all %}
+                <div class="col-sm-6 col-lg-4 all {{ item.food.category.name|slugify }}">
                     <div class="box">
                         <div>
                             <div class="img-box">
-                                <img src="{{ food.image.url }}" alt="{{ food.name }}">
+                                <img src="{{ item.food.image.url }}" alt="{{ item.food.name }}">
                             </div>
                             <div class="detail-box">
-                                <h5>{{ food.name }}</h5>
-                                <p>{{ food.description }}</p>
+                                <h5>{{ item.food.name }}</h5>
+                                <p>{{ item.food.description }}</p>
                                 <div class="options">
-                                    <h6>${{ food.price }}</h6>
-                                    <a href="{% url 'add_to_cart' food.id %}">
-                                        <!-- SVG for cart icon -->
+                                    <h6>{{ item.quantity }} x ${{ item.food.price }} = ${{ item.get_total_price }}</h6>
+                                    <a href="{% url 'remove_from_cart' item.id %}">
+                                        <!-- SVG for remove cart icon -->
                                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                             <g>
                                                 <g>
@@ -59,6 +56,7 @@ Menu - Biddy
                                                 </g>
                                             </g>
                                         </svg>
+                                        Remove
                                     </a>
                                 </div>
                             </div>
@@ -71,5 +69,5 @@ Menu - Biddy
         </div>
     </div>
   </section>
-  <!-- end food section -->
+  <!-- end cart section -->
 {% endblock content %}

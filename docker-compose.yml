@@ -18,23 +18,23 @@ services:
   
   rasa:
     build:
-      context: ./BiddyBot/BiddyBot
+      context: ../Chatbots/BiddyBot/BiddyBot
       dockerfile: Dockerfile.rasa
     ports:
       - "5005:5005"
     volumes:
-      - ./BiddyBot/BiddyBot:/app
+      - ../Chatbots/BiddyBot/BiddyBot:/app
     environment:
       - PYTHONUNBUFFERED=1
 
   action_server:
     build:
-      context: ./BiddyBot/BiddyBot
+      context: ../Chatbots/BiddyBot/BiddyBot
       dockerfile: Dockerfile.actions
     ports:
       - "5055:5055"
     volumes:
-      - ./BiddyBot/BiddyBot/actions:/app/actions
+      - ../Chatbots/BiddyBot/BiddyBot/actions:/app/actions
     depends_on:
       - rasa
     environment:
@@ -45,8 +45,10 @@ services:
     volumes:
       - static:/app/static
       - images:/app/images
+      - ./nginx/certs:/etc/nginx/certs  # Monte les certificats auto-signés
     ports:
       - "80:80"
+      - "443:443"  # Ouvrir également le port HTTPS
     depends_on:
       - biddy_gunicorn
 

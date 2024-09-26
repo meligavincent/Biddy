@@ -127,6 +127,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+LOGIN_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'  # Where users go after login
+
+CSRF_TRUSTED_ORIGINS = ['https://localhost']
+
 
 
 # Static files (CSS, JavaScript, Images)
