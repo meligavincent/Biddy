@@ -48,7 +48,8 @@ def add_to_cart(request, food_id):
         cart_item.quantity += 1
         cart_item.save()
     
-    return HttpResponse(f"{food.name} has been added to your cart.")
+    #return HttpResponse(f"{food.name} has been added to your cart.")
+    return redirect('cart_detail')
 
 
 def remove_from_cart(request, item_id):

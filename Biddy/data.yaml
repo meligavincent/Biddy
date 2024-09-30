@@ -1,28 +1,28 @@
-# Category: Desserts
+# Catégorie: Desserts
 - model: order_food.category
   pk: 1
   fields:
     name: Desserts
-    description: Sweet and delightful treats.
+    description: Douces et délicieuses gourmandises.
     is_active: true
 
-# Products for Desserts
+# Produits pour les Desserts
 - model: order_food.food
   pk: 1
   fields:
-    name: Chocolate Lava Cake
+    name: Gâteau au chocolat fondant
     price: 6.50
-    description: Rich and gooey chocolate lava cake, served warm.
+    description: Gâteau au chocolat riche et fondant, servi chaud.
     image: images/chocolate_lava_cake.jpg
     is_active: true
-    category: {model: order_food.category, pk: 1}  # Correct way to reference the category
+    category: {model: order_food.category, pk: 1}
 
 - model: order_food.food
   pk: 2
   fields:
-    name: Vanilla Ice Cream
+    name: Glace à la vanille
     price: 3.00
-    description: Creamy vanilla ice cream made from real vanilla beans.
+    description: Glace à la vanille crémeuse faite à partir de véritables gousses de vanille.
     image: images/vanilla_ice_cream.jpg
     is_active: true
     category: {model: order_food.category, pk: 1}
@@ -30,9 +30,9 @@
 - model: order_food.food
   pk: 3
   fields:
-    name: Apple Pie
+    name: Tarte aux pommes
     price: 4.00
-    description: Classic apple pie with a flaky crust and cinnamon-spiced apples.
+    description: Tarte aux pommes classique avec une croûte feuilletée et des pommes épicées à la cannelle.
     image: images/apple_pie.jpg
     is_active: true
     category: {model: order_food.category, pk: 1}
@@ -42,7 +42,7 @@
   fields:
     name: Tiramisu
     price: 5.50
-    description: Italian coffee-flavored dessert with layers of mascarpone and cocoa.
+    description: Dessert italien au café avec des couches de mascarpone et de cacao.
     image: images/tiramisu.jpg
     is_active: true
     category: {model: order_food.category, pk: 1}
@@ -50,28 +50,28 @@
 - model: order_food.food
   pk: 5
   fields:
-    name: Brownie Sundae
+    name: Sundae brownie
     price: 6.00
-    description: Fudgy brownie topped with vanilla ice cream and chocolate sauce.
+    description: Brownie fondant garni de glace à la vanille et de sauce au chocolat.
     image: images/brownie_sundae.jpg
     is_active: true
     category: {model: order_food.category, pk: 1}
 
-# Category: Beverages
+# Catégorie: Boissons
 - model: order_food.category
   pk: 2
   fields:
-    name: Beverages
-    description: Refreshing drinks to complement your meal.
+    name: Boissons
+    description: Boissons rafraîchissantes pour accompagner votre repas.
     is_active: true
 
-# Products for Beverages
+# Produits pour les Boissons
 - model: order_food.food
   pk: 6
   fields:
-    name: Fresh Lemonade
+    name: Citronnade fraîche
     price: 2.50
-    description: Freshly squeezed lemonade with a hint of mint.
+    description: Citronnade fraîchement pressée avec une touche de menthe.
     image: images/fresh_lemonade.jpg
     is_active: true
     category: {model: order_food.category, pk: 2}
@@ -79,9 +79,9 @@
 - model: order_food.food
   pk: 7
   fields:
-    name: Iced Coffee
+    name: Café glacé
     price: 3.00
-    description: Chilled coffee with milk and a touch of sweetness.
+    description: Café frais avec du lait et une pointe de douceur.
     image: images/iced_coffee.jpg
     is_active: true
     category: {model: order_food.category, pk: 2}
@@ -89,9 +89,9 @@
 - model: order_food.food
   pk: 8
   fields:
-    name: Mango Smoothie
+    name: Smoothie à la mangue
     price: 4.00
-    description: Creamy mango smoothie made with fresh mangoes.
+    description: Smoothie crémeux à la mangue fait avec des mangues fraîches.
     image: images/mango_smoothie.jpg
     is_active: true
     category: {model: order_food.category, pk: 2}
@@ -99,9 +99,9 @@
 - model: order_food.food
   pk: 9
   fields:
-    name: Herbal Tea
+    name: Thé aux herbes
     price: 2.00
-    description: A soothing blend of herbal tea with chamomile and peppermint.
+    description: Un mélange apaisant de thé aux herbes avec de la camomille et de la menthe poivrée.
     image: images/herbal_tea.jpg
     is_active: true
     category: {model: order_food.category, pk: 2}
@@ -109,28 +109,28 @@
 - model: order_food.food
   pk: 10
   fields:
-    name: Sparkling Water
+    name: Eau pétillante
     price: 1.50
-    description: Refreshing sparkling water with a hint of lime.
+    description: Eau pétillante rafraîchissante avec une touche de citron vert.
     image: images/sparkling_water.jpg
     is_active: true
     category: {model: order_food.category, pk: 2}
 
-# Category: Appetizers
+# Catégorie: Entrées
 - model: order_food.category
   pk: 3
   fields:
-    name: Appetizers
-    description: Light and tasty starters to kick off your meal.
+    name: Entrées
+    description: Des entrées légères et savoureuses pour débuter votre repas.
     is_active: true
 
-# Products for Appetizers
+# Produits pour les Entrées
 - model: order_food.food
   pk: 11
   fields:
-    name: Garlic Breadsticks
+    name: Bâtonnets de pain à l'ail
     price: 3.00
-    description: Warm garlic breadsticks with a crispy crust and soft center.
+    description: Bâtonnets de pain à l'ail chaud avec une croûte croustillante et un centre moelleux.
     image: images/garlic_breadsticks.jpg
     is_active: true
     category: {model: order_food.category, pk: 3}
@@ -138,9 +138,9 @@
 - model: order_food.food
   pk: 12
   fields:
-    name: Mozzarella Sticks
+    name: Bâtonnets de mozzarella
     price: 4.50
-    description: Crispy fried mozzarella sticks served with marinara sauce.
+    description: Bâtonnets de mozzarella frits et croustillants servis avec une sauce marinara.
     image: images/mozzarella_sticks.jpg
     is_active: true
     category: {model: order_food.category, pk: 3}
@@ -148,9 +148,9 @@
 - model: order_food.food
   pk: 13
   fields:
-    name: Stuffed Mushrooms
+    name: Champignons farcis
     price: 5.00
-    description: Button mushrooms stuffed with a garlic and herb cheese filling.
+    description: Champignons farcis avec une garniture au fromage à l'ail et aux herbes.
     image: images/stuffed_mushrooms.jpg
     is_active: true
     category: {model: order_food.category, pk: 3}
@@ -158,9 +158,9 @@
 - model: order_food.food
   pk: 14
   fields:
-    name: Chicken Wings
+    name: Ailes de poulet
     price: 6.00
-    description: Spicy buffalo chicken wings served with ranch dipping sauce.
+    description: Ailes de poulet épicées servies avec une sauce ranch.
     image: images/chicken_wings.jpg
     is_active: true
     category: {model: order_food.category, pk: 3}
@@ -168,28 +168,28 @@
 - model: order_food.food
   pk: 15
   fields:
-    name: Shrimp Cocktail
+    name: Cocktail de crevettes
     price: 7.00
-    description: Chilled shrimp served with cocktail sauce and lemon.
+    description: Crevettes fraîches servies avec une sauce cocktail et du citron.
     image: images/shrimp_cocktail.jpg
     is_active: true
     category: {model: order_food.category, pk: 3}
 
-# Category: Main Course
+# Catégorie: Plat principal
 - model: order_food.category
   pk: 4
   fields:
-    name: Main Course
-    description: Hearty and flavorful main dishes.
+    name: Plat principal
+    description: Plats principaux copieux et savoureux.
     is_active: true
 
-# Products for Main Course
+# Produits pour les Plats principaux
 - model: order_food.food
   pk: 16
   fields:
-    name: Grilled Salmon
+    name: Saumon grillé
     price: 12.00
-    description: Tender grilled salmon with a lemon butter sauce.
+    description: Saumon grillé tendre avec une sauce au beurre citronné.
     image: images/grilled_salmon.jpg
     is_active: true
     category: {model: order_food.category, pk: 4}
@@ -197,9 +197,9 @@
 - model: order_food.food
   pk: 17
   fields:
-    name: Spaghetti Carbonara
+    name: Spaghetti carbonara
     price: 10.00
-    description: Creamy pasta with pancetta and Parmesan cheese.
+    description: Pâtes crémeuses avec de la pancetta et du parmesan.
     image: images/spaghetti_carbonara.jpg
     is_active: true
     category: {model: order_food.category, pk: 4}
@@ -207,9 +207,9 @@
 - model: order_food.food
   pk: 18
   fields:
-    name: Chicken Alfredo
+    name: Poulet Alfredo
     price: 11.00
-    description: Grilled chicken served over fettuccine with Alfredo sauce.
+    description: Poulet grillé servi sur des fettuccines avec une sauce Alfredo.
     image: images/chicken_alfredo.jpg
     is_active: true
     category: {model: order_food.category, pk: 4}
@@ -217,9 +217,9 @@
 - model: order_food.food
   pk: 19
   fields:
-    name: Beef Steak
+    name: Steak de boeuf
     price: 15.00
-    description: Juicy beef steak served with mashed potatoes and green beans.
+    description: Steak de boeuf juteux servi avec de la purée de pommes de terre et des haricots verts.
     image: images/beef_steak.jpg
     is_active: true
     category: {model: order_food.category, pk: 4}
@@ -227,28 +227,28 @@
 - model: order_food.food
   pk: 20
   fields:
-    name: Vegetable Stir Fry
+    name: Sauté de légumes
     price: 8.00
-    description: Stir-fried vegetables with soy sauce and sesame seeds.
+    description: Légumes sautés avec de la sauce soja et des graines de sésame.
     image: images/vegetable_stir_fry.jpg
     is_active: true
     category: {model: order_food.category, pk: 4}
 
-# Category: Salads
+# Catégorie: Salades
 - model: order_food.category
   pk: 5
   fields:
-    name: Salads
-    description: Fresh and healthy salad options.
+    name: Salades
+    description: Des options de salades fraîches et saines.
     is_active: true
 
-# Products for Salads
+# Produits pour les Salades
 - model: order_food.food
   pk: 21
   fields:
-    name: Caesar Salad
+    name: Salade César
     price: 5.50
-    description: Classic Caesar salad with fresh romaine lettuce, croutons, and Parmesan.
+    description: Salade César classique avec des croûtons et une sauce crémeuse.
     image: images/caesar_salad.jpg
     is_active: true
     category: {model: order_food.category, pk: 5}
@@ -256,9 +256,9 @@
 - model: order_food.food
   pk: 22
   fields:
-    name: Greek Salad
+    name: Salade grecque
     price: 6.00
-    description: A refreshing mix of cucumbers, tomatoes, olives, and feta cheese.
+    description: Salade grecque avec des olives, de la feta, des tomates, et du concombre.
     image: images/greek_salad.jpg
     is_active: true
     category: {model: order_food.category, pk: 5}
@@ -266,29 +266,73 @@
 - model: order_food.food
   pk: 23
   fields:
-    name: Caprese Salad
-    price: 5.00
-    description: Sliced tomatoes, fresh mozzarella, and basil drizzled with balsamic glaze.
-    image: images/caprese_salad.jpg
+    name: Salade de fruits
+    price: 4.50
+    description: Un mélange frais de fruits de saison avec une touche de miel.
+    image: images/cobb_salad.jpg
     is_active: true
     category: {model: order_food.category, pk: 5}
 
 - model: order_food.food
   pk: 24
   fields:
-    name: Cobb Salad
+    name: Salade au poulet grillé
     price: 7.50
-    description: A hearty salad with chicken, bacon, egg, and blue cheese.
-    image: images/cobb_salad.jpg
+    description: Salade au poulet grillé avec des légumes verts et une vinaigrette légère.
+    image: images/caprese_salad.jpg
     is_active: true
     category: {model: order_food.category, pk: 5}
 
 - model: order_food.food
   pk: 25
   fields:
-    name: Spinach Salad
+    name: Salade de quinoa
     price: 6.50
-    description: Fresh spinach with strawberries, pecans, and a balsamic vinaigrette.
+    description: Salade de quinoa avec des légumes croquants et une vinaigrette citronnée.
     image: images/spinach_salad.jpg
     is_active: true
     category: {model: order_food.category, pk: 5}
+
+# Catégorie: plats traditionnels
+- model: order_food.category
+  pk: 6
+  fields:
+    name: Plats traditionnels
+    description: Plats traditionnels Camerounais.
+    is_active: true
+- model: order_food.food
+  pk: 26
+  fields:
+    name: Okok
+    price: 6.50
+    description: Salade de quinoa avec des légumes croquants et une vinaigrette citronnée.
+    image: images/okok.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 6}
+- model: order_food.food
+  pk: 27
+  fields:
+    name: Eru
+    price: 6.50
+    description: Salade de quinoa avec des légumes croquants et une vinaigrette citronnée.
+    image: images/eru.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 6}
+- model: order_food.food
+  pk: 28
+  fields:
+    name: Viande d'escargots
+    price: 6.50
+    description: Salade de quinoa avec des légumes croquants et une vinaigrette citronnée.
+    image: images/congo_meat.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 6}
+- model: order_food.food
+  pk: 29
+  fields:
+    name: Sangha
+    price: 6.50
+    description: plat fait à partir de feuilles de manioc.
+    image: images/sangha.jpg
+    is_active: true
+    category: {model: order_food.category, pk: 6}
